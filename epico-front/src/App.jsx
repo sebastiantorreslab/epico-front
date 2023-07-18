@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { NavBarContainer } from "./components/layout/NavBar/NavBarContainer";
+import { FooterContainer } from "./components/layout/Footer/FooterContainer";
+import { HomeContainer } from "./components/pages/Home/HomeContainer";
+import { ItemContainer } from "./components/pages/Products/ItemContainer";
+import { ItemDetailContainer } from "./components/pages/Products/ItemDetailContainer";
+import { FavsContainer } from "./components/pages/Favs/FavsContainer";
+import { GlobalContextProvider } from "./context/GlobalContext";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <BrowserRouter>
+        <GlobalContextProvider>
+          <Routes>
+            <Route element={<NavBarContainer />}>
+              <Route element={<FooterContainer />}>
+                <Route path="/" element={<HomeContainer />} />
+                <Route path="/item" element={<ItemContainer />} />
+                <Route path="/item/:id" element={<ItemDetailContainer />} />
+                <Route path="/favs" element={<FavsContainer />} />
+              </Route>
+            </Route>
+            <Route path="*" element={<h1>404-not found</h1>} />
+          </Routes>
+        </GlobalContextProvider>
+      </BrowserRouter>
+    </div>
+  );
 }
 
-export default App
+export default App;

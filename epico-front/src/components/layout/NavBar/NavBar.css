@@ -1,0 +1,20 @@
+div.app-light {
+    background-color: white;
+    color: #111415;
+  }
+  
+  div.app-dark button {
+    background-color: #111415;
+    color: white;
+    border-color: silver;
+  }
+
+  div.app-dark  {
+    background-color: #111415;
+    color: white;
+    border-color: silver;
+  }
+
+
+  
+  

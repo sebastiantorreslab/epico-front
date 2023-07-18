@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+div.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+
+div.item-card{
+    width: 250px;
+    height: fit-content;
+    border-radius: 5px;
+    border:1px;
+    border-style: outset;
+    border-color: silver;
+}
