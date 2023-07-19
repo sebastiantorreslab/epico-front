@@ -20,7 +20,7 @@ export const Item = ({ state, dispatch }) => {
             </Link>
             <button
               style={{
-                backgroundColor: state.favs.some(
+                backgroundColor: state?.favs?.some(
                   (element) => element.id === item.id
                 )
                   ? "#00b57f"

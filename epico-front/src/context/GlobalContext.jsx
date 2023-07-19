@@ -6,7 +6,7 @@ const initialState = {
   items: [],
   item: {},
   isDark: false,
-  favs: JSON.parse(localStorage.getItem("favs")) || "",
+  favs: JSON.parse(localStorage.getItem("favs")) || [],
 };
 
 const removeFiltered = (id, state) => {
